@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="conteneur">
+        <!-- En-tête -->
+        <div class="en-tete">
+            <h1>Calculatrice Interactive avec HTML, CSS, JavaScript et PHP</h1>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="contenu">
+            <!-- Section calculatrice -->
+            <section class="section-calc">
+                <div class="titre-section">
+                    <p class="description">Entrez a, b et l'opération que vous souhaitez</p>
+                </div>
+                
+                <div class="carte-calc">
+                    <form id="form-calc" class="form-calc">
+                        <div class="groupe-input">
+                            <label for="nombreA">Nombre A</label>
+                            <input type="number" id="nombreA" step="any" placeholder="Entrez le premier nombre" required>
+                        </div>
+                        
+                        <div class="groupe-input">
+                            <label for="operation">Opération</label>
+                            <select id="operation" class="select-op">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value="*">×</option>
+                                <option value="/">÷</option>
+                            </select>
+                        </div>
+                        
+                        <div class="groupe-input">
+                            <label for="nombreB">Nombre B</label>
+                            <input type="number" id="nombreB" step="any" placeholder="Entrez le second nombre" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-calc">
+                            Calculer
+                        </button>
+                    </form>
+                    
+                    <div class="zone-resultat">
+                        <h3>Résultat</h3>
+                        <div id="affichage-resultat" class="boite-resultat">
+                            <p>Le résultat s'affichera ici...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section historique -->
+            <section class="section-histo">
+                <div class="titre-section">
+                    <h2>Historique des Opérations</h2>
+                    <p class="description">Consultez vos 20 derniers calculs</p>
+                </div>
+                
+                <div class="carte-histo">
+                    <div class="entete-carte">
+                        <h3>Liste des calculs</h3>
+                        <button id="effacer-histo" class="btn-effacer">
+                            Effacer l'historique
+                        </button>
+                    </div>
+                    
+                    <div id="affichage-erreur" class="boite-erreur"></div>
+                    
+                    <div id="liste-histo" class="liste-histo">
+                        <div class="message-vide">
+                            <p>Aucun calcul effectué pour le moment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pied-carte">
+                        <p>Total des opérations : <span id="total-operations">0</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Pied de page -->
+        <footer>
+            <div class="bloc">
+                <p>Une application interactive combinant HTML, CSS, JavaScript & PHP</p>
+                <p>&copy; 2025 - Calculatrice - Mariem Aithssine - TP 6</p> 
+            </div>
+        </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

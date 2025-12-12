@@ -1,0 +1,341 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;  /* Noir */
+    color: white;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Conteneur principal */
+.conteneur {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #1e1e1e;  /* Gris foncé */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* En-tête */
+.en-tete {
+    background: #2d2d2d;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid #444;
+}
+
+.en-tete h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Contenu principal */
+.contenu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+@media (min-width: 768px) {
+    .contenu {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Section calculatrice */
+.section-calc {
+    grid-column: 1;
+}
+
+.titre-section {
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Carte calculatrice */
+.carte-calc {
+    background: #2a2a2a;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.form-calc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.groupe-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.groupe-input label {
+    font-weight: bold;
+    color: #ddd;
+}
+
+.groupe-input input,
+.select-op {
+    padding: 12px;
+    background: #333;
+    border: 2px solid #444;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+}
+
+.groupe-input input:focus,
+.select-op:focus {
+    border-color: #4a90e2;
+    outline: none;
+    background: #3a3a3a;
+}
+
+.select-op {
+    cursor: pointer;
+}
+
+/* Bouton calculer */
+.btn-calc {
+    padding: 14px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-calc:hover {
+    background: #3a80d2;
+}
+
+/* Zone résultat */
+.zone-resultat {
+    margin-top: 25px;
+}
+
+.zone-resultat h3 {
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.boite-resultat {
+    background: #333;
+    padding: 20px;
+    border-radius: 6px;
+    border: 2px dashed #4a90e2;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Section historique */
+.section-histo {
+    grid-column: 2;
+}
+
+@media (max-width: 767px) {
+    .section-histo {
+        grid-column: 1;
+    }
+}
+
+.titre-section h2 {
+    color: white;
+    border-bottom: 3px solid #4a90e2;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.carte-histo {
+    background: #2a2a2a;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.entete-carte {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #444;
+}
+
+.entete-carte h3 {
+    color: #ddd;
+}
+
+/* Bouton effacer */
+.btn-effacer {
+    padding: 8px 16px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-effacer:hover {
+    background: #c0392b;
+}
+
+/* Boîte d'erreur */
+.boite-erreur {
+    background: #442222;
+    border: 1px solid #e74c3c;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    color: #ff6666;
+    display: none;
+}
+
+.boite-erreur.visible {
+    display: block;
+}
+
+/* Liste historique */
+.liste-histo {
+    min-height: 300px;
+    max-height: 350px;
+    overflow-y: auto;
+    background: #333;
+    border-radius: 4px;
+    padding: 15px;
+    border: 1px solid #444;
+}
+
+.message-vide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    color: #777;
+    text-align: center;
+}
+
+/* Élément historique */
+.element-histo {
+    background: #3a3a3a;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border-left: 4px solid #4a90e2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-calc {
+    flex: 1;
+}
+
+.operation {
+    font-weight: bold;
+    color: #ddd;
+}
+
+.heure {
+    font-size: 14px;
+    color: #888;
+}
+
+.resultat {
+    font-weight: bold;
+    color: #4a90e2;
+    font-size: 18px;
+}
+
+/* Pied de carte */
+.pied-carte {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #444;
+    font-weight: bold;
+    color: #aaa;
+}
+
+/* Pied de page */
+footer {
+    background: #333;
+    color: white;
+    padding: 30px;
+    margin-top: 30px;
+    border-top: 3px solid #444;
+    text-align: center;
+}
+
+footer .bloc {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer p {
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .contenu {
+        padding: 15px;
+    }
+    
+    .en-tete {
+        padding: 15px;
+    }
+    
+    .en-tete h1 {
+        font-size: 22px;
+    }
+    
+    .description {
+        font-size: 16px;
+    }
+    
+    .carte-calc,
+    .carte-histo {
+        padding: 20px;
+    }
+    
+    .entete-carte {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .btn-calc,
+    .btn-effacer {
+        width: 100%;
+    }
+    
+    footer {
+        padding: 20px;
+    }
+}
